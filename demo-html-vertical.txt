@@ -1,0 +1,32 @@
+<div id="lawCalendar2" initialFilter="All" feed="https://api.orgsync.com/api/v3/portals/70072/events.rss?key=PL6_i8ToSTlKctLzIcFLlKgGm2hBPpcC4HGGBHsbFos&per_page=100&upcoming=true">
+
+<div class="events-interior parbase section"><div class="going-on">
+    <div class="title">
+
+        <h3>BC Law Events</h3>
+        <select class="selectpicker events-interior-select" style="display: none;">
+
+            <option value="All">All</option>
+            
+                <option value="Career Services">Career Services</option>
+            
+                <option value="Admissions and Financial Aid">Admissions and Financial Aid</option>
+            
+                <option value="General">General</option>
+             
+        </select>
+
+
+
+    </div>
+    
+    <div id="eventsList">
+
+    
+    
+</div>
+    </div>
+</div>
+
+</div>
+<script type="text/javascript" src="/content/dam/bc1/schools/law/js/calendar/calendar-vertical.js"></script>
