@@ -1,4 +1,4 @@
-# Calendar
+# Yale Connect Calendar
 Pulls event data from a [Yale Connect](https://yaleconnect.yale.edu) (OrgSync) RSS feed and displays a pretty vertical or horizontal calendar.  Modified by [Sean O'Brien](http://oiss.yale.edu/about/oiss-staff/sean-obrien) from work by the [Boston College Law Library](https://github.com/BCLawLibrary/calendar).
 
 This code is used by Yale's [Office of International Students and Scholars](http://oiss.yale.edu) (OISS) to display events created in Yale Connect on the OISS Drupal website.
