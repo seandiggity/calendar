@@ -11,9 +11,6 @@ This code is used by Yale's [Office of International Students and Scholars](http
 * [Horizontal - OISS Programs & Events landing page](http://oiss.yale.edu/programs)
 ![Screenshot](https://github.com/seandiggity/yale-connect-calendar/raw/master/screenshot-horizontal.png)
 
-_TODO: Create a Drupal module.  In the meantime, the HTML can be used on a Drupal page in "PHP code" format, with JavaScript provided by the "JS Injector" Drupal module._
-
-
 # Usage
 
 ## HTML
@@ -34,6 +31,8 @@ _TODO: Make the feed URL a config option._
 
 _TODO: Add config options for vertical or horizontal, display choice, and register URLs._
 
+_TODO: Create a Drupal module.  In the meantime, the HTML can be used on a Drupal page in "PHP code" format, with JavaScript provided by the "JS Injector" Drupal module._
+
 ## CSS
 Edit the stylesheets `css/vertical.css` or `css/horizontal.css` to change the vertical or horizontal styles, respectively.
 
@@ -42,5 +41,5 @@ Edit the stylesheets `css/vertical.css` or `css/horizontal.css` to change the ve
 
 This work as a whole is released under the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html).  
   
-_TODO: Add [JavaScript Web Labels](https://www.gnu.org/software/librejs/manual/librejs.html#JavaScript-Web-Labels) for LibreJS.  
+_TODO: Add [JavaScript Web Labels](https://www.gnu.org/software/librejs/manual/librejs.html#JavaScript-Web-Labels) for LibreJS._
 
