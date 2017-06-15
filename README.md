@@ -25,7 +25,7 @@ The configuration for the display of the RSS feeds is found in `js/calendar-vert
 
 _Register Here: http://some-website-dotcom/some-webpage_
 
-These scripts require [Boostrap](https://getbootstrap.com) and [jQuery](https://jquery.com/), which is included.
+These scripts require [Bootstrap](https://getbootstrap.com) and [jQuery](https://jquery.com/), which is included.
 
 _TODO: Make the feed URL a config option._
 
@@ -37,7 +37,7 @@ _TODO: Create a Drupal module.  In the meantime, the HTML can be used on a Drupa
 Edit the stylesheets `css/vertical.css` or `css/horizontal.css` to change the vertical or horizontal styles, respectively.
 
 # Licensing
-[Boostrap](https://getbootstrap.com) and [jQuery](https://jquery.com/) are released under the [MIT/Expat license](https://opensource.org/licenses/MIT).
+[Bootstrap](https://getbootstrap.com) and [jQuery](https://jquery.com/) are released under the [MIT/Expat license](https://opensource.org/licenses/MIT).
 
 This work as a whole is released under the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html).  
   
