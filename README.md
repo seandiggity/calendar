@@ -6,10 +6,10 @@ This code is used by Yale's [Office of International Students and Scholars](http
 ## Examples:
 
 * [Vertical - OISS Events Calendar](http://oiss.yale.edu/calendar)
-![Screenshot](https://github.com/seandiggity/yale-connect-calendar/raw/master/screenshot-vertical.png =420x)
+![Screenshot](https://github.com/seandiggity/yale-connect-calendar/raw/master/screenshot-vertical.png)
 
 * [Horizontal - OISS Programs & Events landing page](http://oiss.yale.edu/programs)
-![Screenshot](https://github.com/seandiggity/yale-connect-calendar/raw/master/screenshot-horizontal.png =420x)
+![Screenshot](https://github.com/seandiggity/yale-connect-calendar/raw/master/screenshot-horizontal.png)
 
 _TODO: Create a Drupal module.  In the meantime, the HTML can be used on a Drupal page in "PHP code" format, with JavaScript provided by the "JS Injector" Drupal module._
 
