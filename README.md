@@ -1,8 +1,34 @@
 # Calendar
-Reads calendar data from an OrgSync RSS feed and displays the data in the format used on the Boston College website.
+Pulls event data from a Yale Connect (OrgSync) RSS feed and displays a pretty vertical or horizontal calendar.
 
-The purpose of this code is to allow an existing calendar design to the work with the public RSS feed provided by OrgSync's calendaring functions. The feed to be used is specified within the HTML - see one of the provided example HTML files.
+This code is used by Yale's Office of International Students and Scholars (OISS) to display events created in Yale Connect on the OISS Drupal website.
 
-There are two possible layouts for the calendar: horizontal, as seen on https://www.bc.edu/bc-web/schools/law/ and vertical as seen on https://www.bc.edu/bc-web/schools/law/centers.html#column-par-1-bc_tabbed_content-tab-1. For each layout, CSS is provided by the site's style sheets. The purpose of this code is to produce HTML that matches the HTML produced by the primary calendar components, which rely on a different source of calendar data.
+## Examples: 
 
-Requires JQuery.
+* [Vertical - OISS Events Calendar](http://oiss.yale.edu/calendar)
+* [Horizontal - OISS Programs & Events landing page](http://oiss.yale.edu/programs)
+
+_TODO: Create a Drupal module.  In the meantime, the HTML can be used on a Drupal page in "PHP code" format, with JavaScript provided by the "JS Injector" Drupal module._
+
+
+# Usage
+
+## HTML
+The easiest way to get up and running is to choose `vertical.html` or `horizontal.html` and then embed the page in `<iframe>` tags.  You will need to edit the HTML and change the feed URL inside the `eventCalendar` div, where it says `feed=`. The URL will be something like -
+: `https://api.orgsync.com/api/v3/portals/abc123/events.rss?key=abc123&per_page=100&upcoming=true`
+
+## JavaScript
+The configuration for the formatting/display of the RSS feeds is found in `js/calendar-vertical.js` or `js/calendar-horizontal.js` for the vertical or horizontal calendars, respectively.   This JavaScript does string processing to make the descriptions pretty, truncate text, create hyperlinks, and format buttons.
+
+**To create a "Register Here" button, follow this format at the end of your Yale Connect/OrgSync event description -**
+: _Register Here: http://some-website-dotcom/some-webpage_
+
+These scripts require Boostrap and jQuery.
+
+_TODO: Make the feed URL a config option._
+
+_TODO: Add config options for vertical or horizontal, display choice, and register URLs._
+
+## CSS
+Edit the stylesheets `css/vertical.css` or `css/horizontal.css` to change the vertical or horizontal styles, respectively.
+

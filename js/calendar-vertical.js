@@ -1,6 +1,6 @@
 $(document).ready(function() {
-var filter=$("div#lawCalendar2").attr("initialFilter");
-var URL=$("div#lawCalendar2").attr("feed");
+var filter=$("div#eventCalendar").attr("initialFilter");
+var URL=$("div#eventCalendar").attr("feed");
 	
 function dayOfWeekAsString(dayIndex) {
   return ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][dayIndex];
@@ -12,7 +12,7 @@ function monthAsString(monthIndex) {
 function drawCalendar (document) {
 $("li.selected").removeClass("selected");
 $("ul.selectpicker li:contains("+filter+")").addClass("selected");
-$("#lawCalendar2").find("div#eventsList").empty();	
+$("#eventCalendar").find("div#eventsList").empty();	
 counter=0	
 	var xmlevents = $(document).find("item");
     xmlevents.sort(function(a,b){
@@ -30,7 +30,7 @@ counter=0
   xmlevents.each(function(index,val){
   	
   	if (filter =="All") {
-  	 if (index > 5) {
+  	 if (index > 32) {
                return false;
         }	
      //Routine to write events    
@@ -75,19 +75,48 @@ counter=0
 			var startTime = hour-12+":"+minute+" PM";
 		}
 	  }
+
+    var eventTitle = $(this).find('title').text();
+    var eventLink = $(this).find('link').text();
+    var eventDesc = $(this).find('description').text();
+    var eventLocation = $(this).find('location').text();
+    var eventImage = $(this).find('media\\:content, content').attr('url');
+
+    // Find the last URL in event description, which will be for the "Register Here" button.
+    var registerURL = eventDesc.match(
+             /(http:\/\/|https:\/\/|\swww\.)(?:.(?!\/\/))+$/igm);
+
+    var registerText = eventDesc.match(
+             /\b(REGISTER HERE |REGISTER HERE:|Register Here: |Register here: |Register Now: |Register now: |Register: |SIGN UP |SIGN UP: |Sign Up: |Sign up: |Sign Up Now: |Sign up now: |Join Here: |Join here: |Join Now: |Join now: |Join: |Volunteer Here: |Volunteer here: |Volunteer Now: |Volunteer now: |Volunteer: |Click Here: |Click here: |Buy Now: |Buy now: |Buy Tickets: |Buy tickets: |Tickets: |Purchase Here: |Purchase here: |Purchase: |Donate Here: |Donate here: |Donate Now: |Donate now: |Donate: |RSVP HERE: |RSVP Here: |RSVP here: |RSVP Now: |RSVP now: |RSVP: )+(http:\/\/|https:\/\/|www\.)([\w\.-]+\.)+[a-z]{2,}\/.+\b/gi);
+
+    var eventDesc = eventDesc.replace(
+		registerText,
+             '');
+
+    // Convert all http://, https://, www. URLs in description text to links
+    var eventDesc = eventDesc.replace(
+             /\b(http:\/\/|https:\/\/|\swww\.)([\w\.-]+\.)+[a-z]{2,}\/.+\b/gi,
+             '<a href="$&">$&</a>');
+
+    // Convert all e-mail addresses in description text to mailto: links
+    var eventDesc = eventDesc.replace(
+             /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/g,
+             '<a href="mailto:$&">$&</a>');
+
      // this is where all the reading and writing will happen
-	 $("#lawCalendar2").find("div#eventsList").append(
-	 '<h4><span>'+textDate+'</span></h4>'+
-	 '<div class="event"><div class="time"><span>'+startTime+'</span></div>'+
-	 '<div class="content"><p><a href="'+$(this).find('link').text()+'">'+$(this).find('title').text()+'</a></p>'+
-	 '<p>'+$(this).find('location').text()+'</p></div></div>'
+	 $("#eventCalendar").find("div#eventsList").append(
+	 '<div class="event">'+
+	 '<h2 class="eventDate">'+textDate+'<span class="eventTime">🕙 '+startTime+'</span></h2>'+
+	 '<h3 class="eventTitle"><a target="_blank" href="'+registerURL+'">'+eventTitle+'</a></h3>'+
+	 '<p class="eventLocation"><a target="_blank" href="https://duckduckgo.com/?q=%21maps+'+eventLocation+'">'+eventLocation+'</a></p>'+
+	 '<a target="_blank" href="'+registerURL+'"><img class="eventImage" src="'+eventImage+'"></a>'+
+	 '<p class="eventDesc">'+eventDesc+'</p>'+
+	 '<a class="btn-lg btn-success" target="_blank" href="'+registerURL+'">Register Here</a>'+
+	 '</div>'
 	);
      	}
     }    
 	//End writing events
-    
-    
-    
     
 	else if ($(this).find('type, event\\:type').text()==filter) {
 		counter++ 
@@ -137,7 +166,7 @@ counter=0
 		}
 	  }
      // this is where all the reading and writing will happen
-	 $("#lawCalendar2").find("div#eventsList").append(
+	 $("#eventCalendar").find("div#eventsList").append(
 	 '<h4><span>'+textDate+'</span></h4>'+
 	 '<div class="event"><div class="time"><span>'+startTime+'</span></div>'+
 	 '<div class="content"><p><a href="'+$(this).find('link').text()+'">'+$(this).find('title').text()+'</a></p>'+
@@ -157,7 +186,7 @@ counter=0
  	counter=0;
  	filter=$(this).text();
  	
- 	$("#lawCalendar2").find("div#eventsList").empty();	
+ 	$("#eventCalendar").find("div#eventsList").empty();	
  		
 	$(document).find("item").each(function(index,val){
 		if (filter =="All") {
@@ -206,7 +235,7 @@ counter=0
 		}
 	  }
      // this is where all the reading and writing will happen
-	 $("#lawCalendar2").find("div#eventsList").append(
+	 $("#eventCalendar").find("div#eventsList").append(
 	 '<h4><span>'+textDate+'</span></h4>'+
 	 '<div class="event"><div class="time"><span>'+startTime+'</span></div>'+
 	 '<div class="content"><p><a href="'+$(this).find('link').text()+'">'+$(this).find('title').text()+'</a></p>'+
@@ -265,7 +294,7 @@ counter=0
 		}
 	  }
      // this is where all the reading and writing will happen
-	 $("#lawCalendar2").find("div#eventsList").append(
+	 $("#eventCalendar").find("div#eventsList").append(
 	 '<h4><span>'+textDate+'</span></h4>'+
 	 '<div class="event"><div class="time"><span>'+startTime+'</span></div>'+
 	 '<div class="content"><p><a href="'+$(this).find('link').text()+'">'+$(this).find('title').text()+'</a></p>'+

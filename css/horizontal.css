@@ -1,0 +1,49 @@
+.eventsList {
+	width:710px;
+	padding:0;
+	margin:0;
+}
+
+.eventTableCell {
+	margin: 8px;
+	width:33%;
+	text-align:center;
+	vertical-align:bottom;
+}
+
+.eventDate {
+	color:#3A7580;
+	font-size:1.2em;
+	text-align:center;
+}
+
+.eventTime {
+	text-align:center;
+	color:#374258;
+	margin-bottom:12px;
+}
+
+.eventTitle {
+	font-size:1.2em;
+	text-align:center;
+}
+
+.eventLocation, .eventLocation a, a.eventLocation {
+	color:#3A7580;
+	display: block;
+}
+
+.eventImage, .eventImage img {
+	text-align:center;
+	max-width:180px;
+	border-radius: 8px;
+	margin-bottom:12px;
+}
+
+.btn:hover, a.btn:hover, .btn-lg:hover, a.btn-lg:hover, .btn-md:hover, a.btn-md:hover, .btn-sm:hover, a.btn-sm:hover {
+	text-decoration: none;
+	padding:8px;
+	text-align:center;
+	max-width:180px;
+}
+

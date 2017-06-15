@@ -1,0 +1,40 @@
+.event {
+	margin: 64px 0 40px 0;
+	min-height:180px;
+}
+
+.eventDate {
+	color:#3A7580;
+}
+
+.eventTime {
+	margin-left:48px;
+	color:#374258;
+}
+
+.eventTitle {
+	
+}
+
+.eventLocation, .eventLocation a, a.eventLocation {
+	color:#3A7580;
+	display: block;
+}
+
+.eventImage, .eventImage img {
+	max-width:160px;
+	border-radius: 8px;
+	float:right;
+	margin: 8px 0 32px 32px;
+}
+
+.eventDesc {
+	margin-top:14px;
+	margin-bottom:24px;
+	min-height:180px;
+}
+
+.btn:hover, a.btn:hover, .btn-lg:hover, a.btn-lg:hover, .btn-md:hover, a.btn-md:hover, .btn-sm:hover, a.btn-sm:hover {
+	text-decoration: none;
+}
+
